@@ -1,0 +1,25 @@
+body {
+    background-color:black;
+}
+
+button {
+    background-color: green; 
+    color: white; 
+    border-radius: 12px;
+    text-align: center;
+    font-size: 24px;
+    width: 50%;
+    position: absolute;
+    top: 0%;
+    left: 25%;
+    margin: 0;
+    height: 64px;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;   
+}
+
+span {
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+

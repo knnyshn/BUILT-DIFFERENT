@@ -39,7 +39,7 @@ async function champAPI(champ) {
     champAPI("Fizz");
 ```
 
-- **Wireframes**: https://excalidraw.com/#json=ZHH6A6Pae3Nupoh184qAw,rAaqhi9H9TG5jXS2kPu-iQ
+- **Wireframes**: https://excalidraw.com/#json=sdUmiuW47zlCgPLSkocVu,703IF-wnRtroZKT4HjZt8w
 
 - **MVP**: Have this site randomize a champion with optimal itemization and setup for highest percentage to win. Include buttons where you can reroll said champion and sound linked to buttons (Tyler 1 screaming etc). 
 
