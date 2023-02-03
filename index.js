@@ -1,11 +1,11 @@
 //Source APIs
-const champion_base = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json';
+const champion_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json';
 const champion_detail_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion/';
-const champion_icon_base = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/';
-const items_base = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/item.json';
-const items_icon_base = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/';
-const summoner_spell_base = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/summoner.json';
-const summoner_spell_icon = 'http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/';
+const champion_icon_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/';
+const items_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/item.json';
+const items_icon_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/';
+const summoner_spell_base = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/summoner.json';
+const summoner_spell_icon = 'https://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/';
 
 // Champion API
 // Champion Detail API so /en_US/champion/InsertChampName
@@ -85,7 +85,7 @@ const button = document.getElementById("reroll");
 button.addEventListener("click", async () => {
   const champ = await champAPI()
   document.body.getElementsByClassName("champSplash")[0].innerHTML='';
-  const champIcon = "http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/"+ champ +".png";
+  const champIcon = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/"+ champ +".png";
   // console.log(champIcon);
   const span = document.createElement("span");
   span.innerText = champ; 
@@ -102,7 +102,7 @@ button.addEventListener("click", async () => {
   const item = await itemAPI();
   console.log(item);
   for (let i = 0; i < item.length; i++) {
-    const icon = "http://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/"+ item[i] +".png";
+    const icon = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/item/"+ item[i] +".png";
     const img3 = document.createElement("img");
     img3.src = icon;
     img3.alt = item[i];
@@ -117,7 +117,7 @@ button.addEventListener("click", async () => {
     const [name, props] = summSpells[i];
     const spellDiv = spellsDivs[i];
     spellDiv.innerHTML = '';
-    const summSpellIconOne = "http://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/"+ name +".png";
+    const summSpellIconOne = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/"+ name +".png";
     // console.log(summSpellIconOne);
     // const span2 = document.createElement("span");
     // span2.innerText = name;
