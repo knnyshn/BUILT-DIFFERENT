@@ -7,7 +7,8 @@ button {
     color: white; 
     border-radius: 12px;
     text-align: center;
-    font-size: 24px;
+    font-size: 42px;
+    font-weight: 200;
     width: 50%;
     position: absolute;
     top: 0%;
@@ -18,8 +19,41 @@ button {
     font-size: 40px;   
 }
 
+.silly {
+    color: white;
+    font-family: 'Anton', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+}
+
 span {
     color: white;
     font-family: 'Anton', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
 }
+
+
+div {
+    font-size: 24px;
+    font-family: 'Anton', sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.summ-container {
+    display: flex;
+    align-content: space-between;
+    flex-direction: column;
+}
+
+
 
