@@ -80,16 +80,16 @@ div {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .text{
         color: black;
         font-size: 16px;
     }
-    body {
-        background-color: rgb(0, 73, 98);
-        background-image: none;
     
-        }
-}
+    body {
+        background-image: none;
+        background-color: cadetblue;
+    }
+
 
 
