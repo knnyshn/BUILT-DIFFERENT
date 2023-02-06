@@ -47,7 +47,7 @@ async function champAPI(champ) {
 
 - **Goals**: Do the JS portion by Friday. Finish HTML and CSS by the weekend. 
 
-- **Priority Matrix**: Pseudocode, JavaScript, HTML, CSS, testing. In that order / priority list.
+- **Priority Matrix**: Log JavaScript, HTML, CSS, test and make sure everythig works. If it ain't broke, don't fix it. In that order / priority list.
 
 - **Timeframes**: I anticipate the JavaScript taking the longest amount of time so I will try to allocate most of my time to that. I do not expect the HTML/CSS portion to take me that much time. Hoping to finish the JavaScript by Thursday/beginning of Friday. Then polish the HTML / CSS Friday + weekend in case I have questions. 
 
