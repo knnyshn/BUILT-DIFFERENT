@@ -6,7 +6,7 @@
 
 body {
     background-color:black;
-    background-image: url(/img/builtdiff.png);
+    background-image: url("./img/builtdiff.png");
     margin: 40px;
 }
 

@@ -20,6 +20,7 @@ async function champAPI() {
   const json = await res.json();
   let adArray = [];
   for(let i in json.data){
+    console.log(json.data);
     if(json.data[i].tags.includes('Marksman') && !json.data[i].tags.includes('Mage') && !json.data[i].tags.includes('Fighter')){
       adArray.push([i, json.data [i]]);
     }
@@ -27,8 +28,9 @@ async function champAPI() {
   }
   let randomAd = Math.floor(Math.random() * ((adArray.length))); 
   console.log(adArray);
-  // console.log(adArray[randomAd][0]);
+  console.log(adArray[randomAd][0]);
   return (adArray[randomAd][0]);
+
   // return because we need the result of this for 
 }
 // champAPI();
@@ -51,10 +53,10 @@ async function itemAPI() {
     console.log(itemArray[i][0]);
     itemData.push(itemArray[i][0]);
   }
-    // console.log(itemArray);
-    // console.log(Object.keys(json.data));
-    // console.log('json       ', json);
-    // console.log('json.data  ', json);
+    console.log(itemArray);
+    console.log(Object.keys(json.data));
+    console.log('json       ', json);
+    console.log('json.data  ', json);
     // Sanity Checks
     // const items = Object.keys(json.data); < all unique keys
     return itemData;
