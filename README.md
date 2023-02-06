@@ -41,9 +41,9 @@ async function champAPI(champ) {
 
 - **Wireframes**: https://excalidraw.com/#json=sdUmiuW47zlCgPLSkocVu,703IF-wnRtroZKT4HjZt8w
 
-- **MVP**: Have this site randomize a champion with optimal itemization and setup for highest percentage to win. Include buttons where you can reroll said champion and sound linked to buttons (Tyler 1 screaming etc). 
+- **MVP**: Have this site randomize a Marksman champion with a set item list. Include buttons where you can reroll said champion.
 
-- **Post-MVP**: Include a role / champion filter.
+- **Post-MVP**: Include a role / champion filter / hover over item for name / Tyler1 screaming button.
 
 - **Goals**: Do the JS portion by Friday. Finish HTML and CSS by the weekend. 
 

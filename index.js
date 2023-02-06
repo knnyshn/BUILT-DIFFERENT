@@ -23,13 +23,15 @@ async function champAPI() {
     if(json.data[i].tags.includes('Marksman') && !json.data[i].tags.includes('Mage') && !json.data[i].tags.includes('Fighter')){
       adArray.push([i, json.data [i]]);
     }
+  // Let in iteration for the array I created. async friendly. 
   }
   let randomAd = Math.floor(Math.random() * ((adArray.length))); 
-  // console.log(adArray);
+  console.log(adArray);
   // console.log(adArray[randomAd][0]);
   return (adArray[randomAd][0]);
+  // return because we need the result of this for 
 }
-champAPI();
+// champAPI();
 // Fetch and randomize AD Champs with filter for mages.
 // ["ChampionName"]["ChampionDetails"]
 // ["Aphelios"]["All Aphelios Details"]
@@ -54,10 +56,10 @@ async function itemAPI() {
     // console.log('json       ', json);
     // console.log('json.data  ', json);
     // Sanity Checks
-    const items = Object.keys(json.data);
+    // const items = Object.keys(json.data); < all unique keys
     return itemData;
   }
-itemAPI();
+// itemAPI();
 // Fetch items that have specific filters for AD champions (generalizing) that are endgame / completed items.
 
 async function summSpellAPI() {
@@ -81,24 +83,26 @@ async function summSpellAPI() {
  
 // Summoner Spell API
 const button = document.getElementById("reroll");
-
 button.addEventListener("click", async () => {
+  // Champ API 
   const champ = await champAPI()
+  // This is why we returned in async champ, because we needed the results from that for this. 
   document.body.getElementsByClassName("champSplash")[0].innerHTML='';
+  document.body.getElementsByClassName("champName")[0].innerHTML='';
   const champIcon = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/"+ champ +".png";
   // console.log(champIcon);
-  const span = document.createElement("span");
-  span.innerText = champ; 
+  const div = document.createElement("div");
+  div.innerText = champ; 
   const img = document.createElement("img");
   img.src = champIcon;
   document.body.getElementsByClassName("champSplash")[0].appendChild(img);
-  document.body.getElementsByClassName("champSplash")[0].appendChild(span);
-  const sillyTitle = ["GIGACHAD", "FREAK OF NATURE", "TRULY BUILT DIFFERENT", "JOHN WICK'S", "BIG TONKA TRUCK", "IDGAF", "6'4 and 280 POUNDS", "MASSIVE PROBLEM", "ABSOLUTE MONSTER", "2000 IQ"];
-  let randTitle = Math.floor(Math.random() * ((sillyTitle.length)));
-  // console.log(randTitle);
-  // console.log((sillyTitle[randTitle]));
+  document.body.getElementsByClassName("champName")[0].appendChild(div);
+  const sillyTitle = ["GIGACHAD", "FREAK OF NATURE", "TRULY BUILT DIFFERENT", "JOHN WICK'S", "BIG TONKA TRUCK", "IDGAF", "6'4 and 280 POUND", "MASSIVE PROBLEM", "ABSOLUTE MONSTER", "2000 IQ"];
+  const randTitle = Math.floor(Math.random() * ((sillyTitle.length)));
   document.getElementById("title").innerHTML=sillyTitle[randTitle];
 
+
+  // Item API
   const item = await itemAPI();
   console.log(item);
   for (let i = 0; i < item.length; i++) {
@@ -110,40 +114,46 @@ button.addEventListener("click", async () => {
     document.body.getElementsByClassName("item")[i].appendChild(img3);
   }
 
+  // Summoner Spell API
   const summSpells = await summSpellAPI();
   console.log({summSpells});
-  const spellsDivs = document.querySelectorAll('.spells')
+  const spellsDivs = document.querySelectorAll(".spells");
   for (let i = 0; i < summSpells.length; i++) {
     const [name, props] = summSpells[i];
     const spellDiv = spellsDivs[i];
     spellDiv.innerHTML = '';
-    const summSpellIconOne = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/"+ name +".png";
+    const summSpellIcon = "https://ddragon.leagueoflegends.com/cdn/13.1.1/img/spell/"+ name +".png";
     // console.log(summSpellIconOne);
     // const span2 = document.createElement("span");
     // span2.innerText = name;
     const img2 = document.createElement("img");
-    img2.src = summSpellIconOne;
+    img2.src = summSpellIcon;
     img2.alt = name;
     spellDiv.append(img2);
-  }
+    }  
+  });
 
+//event listener hover / mouseover + items / descriptions
+//media query breakpoints for devices
+//target container that is holding rendered data, give it border and style nopls container.
 
+const scream = document.getElementById('tyler1');
+scream.addEventListener("click", () => {
+const audio_files = [
+  "./tyler1/addicted.wav",
+  "./tyler1/65.wav",
+  "./tyler1/trashgame.wav",
+  "./tyler1/letsgo.wav",
+  "./tyler1/ohmygod.wav",
+  "./tyler1/scaredcats.wav",
+  "./tyler1/okletsff.wav",
+  "./tyler1/yelling.wav",
+]
+const random_file = audio_files[Math.floor(Math.random() * audio_files.length)];
+let audio = new Audio(random_file);
 
-  
-  
+audio.play();
 });
-  // Item linker here???
-  // Summoner Spell generator here???
-
-
-// Button that is truly built different.
-
-
-// Link champAPI + itemAPI with their respective assets.
-// Generate it all to the page
-
-
-
 
 
 
@@ -156,6 +166,15 @@ button.addEventListener("click", async () => {
 
 
 // OLD VERSIONS OF FUNCTIONS
+
+// let audio
+// const scream = document.getElementById('tyler1');
+// scream.addEventListener("click", () => {
+//   if (audio)
+//     audio.stop();
+//   audio = new Audio("./tyler1/addicted.wav")
+//   audio.play();  
+// });
 
 // champAPI()
 //   .then((champ) => {
@@ -218,4 +237,14 @@ button.addEventListener("click", async () => {
 //   }
 // }
 // itemAPI();
-            
+
+  // Item linker here???
+  // Summoner Spell generator here???
+
+
+// Button that is truly built different.
+
+
+// Link champAPI + itemAPI with their respective assets.
+// Generate it all to the page
+
